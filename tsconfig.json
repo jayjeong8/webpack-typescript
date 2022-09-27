@@ -13,7 +13,9 @@
     "declaration": true,
     "isolatedModules": true
   },
-  "include": ["./src"],
+  "include": [
+    "./front"
+  ],
   "exclude": ["node_modules"]
 }
 

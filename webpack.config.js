@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: './src/components/index.ts',
+  entry: './front/components/index.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -50,9 +50,9 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.scss'],
     alias: {
-      '@comp': path.resolve(__dirname, 'src/components'),
-      '@styles': path.resolve(__dirname, 'src/styles'),
-      '@img': path.resolve(__dirname, 'src/images'),
+      '@comp': path.resolve(__dirname, 'front/components'),
+      '@styles': path.resolve(__dirname, 'front/styles'),
+      '@img': path.resolve(__dirname, 'front/images'),
     },
   },
 };

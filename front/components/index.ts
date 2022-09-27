@@ -10,6 +10,10 @@ function component() {
   includeEl.innerHTML = '1';
   includes && element.appendChild(includeEl);
 
+  const a: string = '111';
+  const b: number = 111;
+
+  function test(pram1: string, pram2: number) {}
   return element;
 }
 
