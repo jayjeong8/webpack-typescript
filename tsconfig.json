@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "module": "esnext",
+    "target": "esnext",
+    "noEmit": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports" : true,
+    "esModuleInterop" : true,
+    "declaration": true,
+    "isolatedModules": true
+  }
+}
+
+// sourceMap : 타입스크립트가 컴파일된 자바스크립트 파일로 인라인 소스맵을 출력하도록 설정.
+// 파일의 오류가 발생했을 때 번들 전 파일의 기준으로 알 수 있게 해준다. 디버깅을 위해 사용.
+
+// noImplicitAny : true로 설정하면 암묵적인 any 사용 불가
+
+// jsx : react로 설정하면 jsx 변환을 거칠 필요 없이 js로 출력된다.
+// jsx를 출력하여 Babel에서 추가로 사용하고 싶다면 "preserve"로 설정.
+
+// declaration : tsc를 사용해 .js 파일이 아닌 .d.ts 파일이 생성되었는지 확인합니다.
+
+// isolatedModules : Babel이 TypeScript 프로젝트의 파일을 안전하게 트랜스파일할 수 있는지 확인한다.
