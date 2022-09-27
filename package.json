@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "concurrently \"npm run build\" \"npm run serve\"",
-    "serve": "nodemon src/app.js",
-    "build": "webpack -w --mode development"
+    "serve": "node server/server.ts",
+    "build": "webpack -w"
   },
   "keywords": [],
   "author": "",
