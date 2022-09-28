@@ -1,16 +1,16 @@
-const express = require('express');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
+import express, { Express } from 'express';
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
 
-const app = express();
-const config = require('../webpack.config.js');
+const app: Express = express();
+import config from '../webpack.config';
 const compiler = webpack(config);
 
 // express에서 webpack-dev-middleware와 webpack.config.js를 사용하도록 설정.
-// 기본 설정 파일
 app.use(
   webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath,
+    publicPath: config.output?.publicPath || '/',
+    // hot: true,
   }),
 );
 
