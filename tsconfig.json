@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "module": "esnext",
+    "module": "commonjs",
     "target": "esnext",
     "noEmit": true,
     "sourceMap": true,
@@ -13,11 +13,11 @@
     "declaration": true,
     "isolatedModules": true
   },
-  "include": [
-    "./front"
-  ],
   "exclude": ["node_modules"]
 }
+
+// module : ts-node는 commonjs만 지원한다.
+// https://webpack.kr/configuration/configuration-languages/
 
 // sourceMap : 타입스크립트가 컴파일된 자바스크립트 파일로 인라인 소스맵을 출력하도록 설정.
 // 파일의 오류가 발생했을 때 번들 전 파일의 기준으로 알 수 있게 해준다. 디버깅을 위해 사용.
