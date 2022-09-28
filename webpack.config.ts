@@ -1,15 +1,18 @@
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
+import webpack from 'webpack';
 
-module.exports = {
+const config: webpack.Configuration = {
   context: __dirname,
-  entry: './src/components/index.ts',
+  entry: './front/components/index.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    publicPath: '/',
   },
+  mode: 'development',
   devtool: 'inline-source-map',
   module: {
     rules: [
@@ -50,9 +53,12 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.scss'],
     alias: {
-      '@comp': path.resolve(__dirname, 'src/components'),
-      '@styles': path.resolve(__dirname, 'src/styles'),
-      '@img': path.resolve(__dirname, 'src/images'),
+      '@comp': path.resolve(__dirname, 'front/components'),
+      '@styles': path.resolve(__dirname, 'front/styles'),
+      '@img': path.resolve(__dirname, 'front/images'),
     },
   },
+  stats: 'errors-only',
 };
+
+export default config;
